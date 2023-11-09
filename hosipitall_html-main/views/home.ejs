@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hospital API</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../styles/home.css"> -->
+   <link rel="stylesheet" href="../styles/home.css">
+</head>
+<body>
+    <h1>Welcome to Hospital API</h1>
+    <p>This project is a Hospital API for the doctors of a Hospital which has been allocated by the govt for testing and quarantine + well being of COVID-19 patients</p>
+    <h2>Installation</h2>
+    <p>To run this application on your local machine, please follow these steps:</p>
+    <ol>
+      <li>Clone this repository using the following command: <code>git clone https://github.com/praveen8409/Hospital-API.git</code></li>
+      <li>Install the required dependencies using the following command: <code>npm install</code></li>
+      <li>Start the application using the following command: <code>npm start</code></li>
+      <li>Open the application in your postman app by visiting the following URL: <code>http://localhost:${port}</code></li>
+    </ol>
+    <h2>Features:</h2>
+    <p>There can be 2 types of Users:</p>
+    <ul>
+      <li>Doctors</li>
+      <li>Patients</li>
+    </ul>
+    <p>Doctors can log in</p>
+    <p>Each time a patient visits, the doctor will follow 2 steps:</p>
+    <ol>
+      <li>Register the patient in the app (using phone number, if the patient already exists, just return the patient info in the API)</li>
+      <li>After the checkup, create a Report</li>
+    </ol>
+    <p>Patient Report will have the following fields:</p>
+    <ul>
+      <li>Created by doctor</li>
+      <li>Status - Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]</li>
+      <li>Date</li>
+    </ul>
+    <h2>Routes:</h2>
+    <ul>
+      <li><a href="/register">/register</a> → with username and password</li>
+      <li><a href="/doctors/login">/doctors/login</a> → returns the JWT to be used</li>
+      <li><a href="/patients/register">/patients/register</a></li>
+      <li><a href="/patients/:id/create_report">/patients/:id/create_report</a></li>
+      <li><a href="/patients/:id/all_reports">/patients/:id/all_reports</a> → List all the reports of a patient oldest to latest</li>
+      <li><a href="/reports/:status">/reports/:status</a> → List all the reports of all the patients filtered by a specific status</li>
+    </ul>
+</body>
+</html>
